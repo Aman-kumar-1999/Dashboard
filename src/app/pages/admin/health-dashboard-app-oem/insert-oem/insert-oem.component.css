@@ -1,0 +1,21 @@
+
+.full-width {
+    width: 50%;
+  }
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  h3{
+    text-align: center;
+    font-family: cursive;
+    color: rgb(22, 14, 29);
+    /* background-color: brown; */
+}

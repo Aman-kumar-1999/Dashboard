@@ -1,0 +1,110 @@
+<!-- <p>
+  <mat-toolbar>
+    <span>My Application</span>
+  </mat-toolbar>
+</p> -->
+
+<p>
+  <mat-toolbar color="accent">
+    <span routerLink="#" mat-icon-button style="text-decoration: none;"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>local_library</mat-icon>&nbsp;&nbsp;
+    </span><span class="fornt">DashBoard Portal&nbsp;&nbsp;</span>
+
+    <span class="example-spacer"></span>
+    <div class="nav-right">
+      <button *ngIf="!isloggined" routerLink="login" mat-stroked-button class="example-icon btnh">
+        <mat-icon>login</mat-icon>
+        <span *ngIf="!isloggined" class="fornt">&nbsp;&nbsp;Login</span>
+      </button>
+      <!-- <button *ngIf="!isloggined" routerLink="signup" mat-stroked-button class="example-icon btnh">
+        <mat-icon>app_registration</mat-icon>
+        <span *ngIf="!isloggined" class="fornt">&nbsp;&nbsp;Registration&nbsp;&nbsp;</span>
+      </button> -->
+      <button (click)="logout()" *ngIf="isloggined" mat-stroked-button class="example-icon btnh">
+        <mat-icon>logout</mat-icon>
+        <span *ngIf="isloggined" class="fornt">&nbsp;&nbsp;Logout&nbsp;&nbsp;</span>
+      </button>
+    </div>
+    <!-- <button mat-icon-button class="example-icon">
+      <mat-icon>logout</mat-icon>
+    </button><span>Logout&nbsp;&nbsp;&nbsp;&nbsp;</span> -->
+  </mat-toolbar>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>navbar works!</p>
+
+<div >
+    <div >
+      <button mat-icon-button >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button mat-icon-button color="primary">
+        <mat-icon>home</mat-icon>
+      </button>
+      <button mat-icon-button color="accent">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-icon-button color="warn">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button disabled >
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+    </div>
+  </div>
+  
+  
+  
+  <div>
+    <button mat-fab color="primary" >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <div >
+    <button mat-fab class="inl" color="accent">
+      <mat-icon>bookmark</mat-icon>
+    </button>
+  </div>
+  <div >
+    <button mat-fab class="inl" color="warn" >
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+  <div >
+    <button mat-fab disabled >
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+  
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <h2>This is Header</h2>
+    <mat-grid-tile>Left Grid</mat-grid-tile>
+    <mat-grid-tile>Right Grid</mat-grid-tile>
+  </mat-grid-list> -->

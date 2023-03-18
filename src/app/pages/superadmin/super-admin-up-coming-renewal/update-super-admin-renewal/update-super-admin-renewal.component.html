@@ -1,0 +1,85 @@
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row container-fluid">
+            <div class="col-md-0">
+                <app-super-admin-sidebar></app-super-admin-sidebar>
+            </div>
+            <div class="col-md-1 ">
+                <button (click)="gotoRenewal()" mat-menu-item>
+                    <mat-icon color="accent">arrow_back</mat-icon>
+                    <!-- <span style="color: rgb(233, 89, 113);"><b>Health</b></span> -->
+                </button>
+            </div>
+
+
+
+
+            <div class="container">
+                <div class="raw">
+                    <div class="col-md-6 offset-md-3 formlogin">
+                        <div >
+                            <h3> Update your Health Dashboard UpComing Renewal Data</h3>
+                        </div>
+                        <!-- {{renewaldata|json}} -->
+                        <br>                        
+                        <div class="container">                            
+                            <form (ngSubmit)="formSubmit()">  
+                                                   
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon>Application Infra</mat-label>
+                                        <input [(ngModel)]="renewaldata.applicationInfra" name="applicationInfra" matInput type="text" class="form-control"
+                                            id="applicationInfra" placeholder="Enter Application Infra">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Due Date</mat-label>
+                                        <input [(ngModel)]="renewaldata.dueData"  matInput name="dueDate" type="text" class="form-control"
+                                            id="dueDate" placeholder=" Enter Due Date">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">                                
+                                      
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Owener</mat-label>
+                                        <input [(ngModel)]="renewaldata.owner"  matInput name="owner" type="text" class="form-control"
+                                            id="owner" placeholder="Enter Owener">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Renewal Type</mat-label>
+                                        <input [(ngModel)]="renewaldata.renewalType"  matInput name="renewalType" type="text" class="form-control"
+                                            id="renewalType" placeholder="Enter Renewal Type">
+                                    </mat-form-field>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Info Updated By</mat-label>
+                                        <input [(ngModel)]="renewaldata.infoUpdateBy"  matInput name="infoUpdatedBy" type="text" class="form-control"
+                                            id="infoUpdatedBy" placeholder="Enter Info Updated By">
+                                    </mat-form-field>
+                                </div>
+
+                                
+                                <div class="text-center">
+                                    <button style="margin-left: 30px;" mat-flat-button color="accent">Submit</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>

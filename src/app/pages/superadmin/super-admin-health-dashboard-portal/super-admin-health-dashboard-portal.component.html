@@ -1,0 +1,171 @@
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row container-fluid">
+            <div class="col-md-0">
+                <app-super-admin-sidebar></app-super-admin-sidebar>
+            </div>
+            <div class="col-md-1 ">
+                <button (click)="gotoHealth()" mat-menu-item>
+                    <mat-icon color="accent">arrow_back</mat-icon>
+                    <!-- <span style="color: rgb(233, 89, 113);"><b>Health</b></span> -->
+                </button>
+            </div>
+
+            <div class="col-md-8 ">
+                <h3>Health Dashboard Portal</h3>
+            </div>
+
+            <div class="col-md-2 container1">
+                <button (click)="insertPortal()" mat-menu-item class="containerb">
+                    <mat-icon color="accent">add_circle</mat-icon>
+                    <!--<label for="show" class="show-btn">Insert</label> -->
+                    <span style="color:rgb(235, 118, 138);">Add Data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </button>
+            </div>
+
+            <div class="col-md-12 container table-responsive">
+
+                <table TABLE BORDER=2 WIDTH="1300" HEIGHT="50">
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th class="id">Id</th>
+                            <th>Application Name</th>
+                            <th>Clean Up Mount Point</th>
+                            <th>Date Time</th>
+                            <th>Frequency</th>
+                            <th>Health Dashboard</th>
+                            <th>Info Updated By</th>
+                            <th>Mount Point Utilization</th>
+                            <th>Server Ip</th>
+                            <th>Service Status</th>
+                            <th>Threshold MountPoint</th>
+                            <th>Disk Size</th>
+                            <th>Used Disk Space</th>
+                            <th>Free Disk Space</th>
+                            <th>Mounted On</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of this.portal.getPortal(); let indexofelement = index;" style="text-align: center;">
+
+
+
+                            <ng-container
+                                *ngIf="i.mountPointUtilization>=75 && i.mountPointUtilization<=100 ; then userloggedIn; else userloggedOut">
+                            </ng-container>
+                            <ng-template #userloggedIn>
+                                <td class="colorred">{{indexofelement+1}}</td>
+                                <td class="colorred">{{i.applicationName}}</td>
+                                <td class="colorred">{{i.cleanUpMountPoint}}</td>
+                                <td class="colorred">{{i.dateTime}}</td>
+                                <td class="colorred">{{i.frequency}}</td>
+                                <td class="colorred">{{i.healthDashboard}}</td>
+                                <td class="colorred">{{i.infoUpdatedBy}}</td>
+                                <td class="colorred">{{i.mountPointUtilization}}</td>
+                                <td class="colorred">{{i.serverIp}}</td>
+                                <td class="colorred">{{i.serviceStatus}}</td>
+                                <td class="colorred">{{i.thresholdMountPoint}}</td>
+                                <td class="colorred">{{i.diskSize}}</td>
+                                <td class="colorred">{{i.usedDiskSpace}}</td>
+                                <td class="colorred">{{i.freeDiskSpace}}</td>
+                                <td class="colorred">{{i.mountedOn}}</td>
+                            </ng-template>
+                            <ng-template #userloggedOut>
+                                <ng-container
+                                    *ngIf="i.mountPointUtilization<75 && i.mountPointUtilization>=60 ; then ambarg; else green">
+                                </ng-container>
+                                <ng-template #ambarg>
+                                    <td class="colorambarg">{{indexofelement+1}}</td>
+                                    <td class="colorambarg">{{i.applicationName}}</td>
+                                    <td class="colorambarg">{{i.cleanUpMountPoint}}</td>
+                                    <td class="colorambarg">{{i.dateTime}}</td>
+                                    <td class="colorambarg">{{i.frequency}}</td>
+                                    <td class="colorambarg">{{i.healthDashboard}}</td>
+                                    <td class="colorambarg">{{i.infoUpdatedBy}}</td>
+                                    <td class="colorambarg">{{i.mountPointUtilization}}</td>
+                                    <td class="colorambarg">{{i.serverIp}}</td>
+                                    <td class="colorambarg">{{i.serviceStatus}}</td>
+                                    <td class="colorambarg">{{i.thresholdMountPoint}}</td>
+                                    <td class="colorambarg">{{i.diskSize}}</td>
+                                    <td class="colorambarg">{{i.usedDiskSpace}}</td>
+                                    <td class="colorambarg">{{i.freeDiskSpace}}</td>
+                                    <td class="colorambarg">{{i.mountedOn}}</td>
+                                </ng-template>
+                                <ng-template #green>
+
+                                    <td class="colorgreen">{{indexofelement+1}}</td>
+                                    <td class="colorgreen">{{i.applicationName}}</td>
+                                    <td class="colorgreen">{{i.cleanUpMountPoint}}</td>
+                                    <td class="colorgreen">{{i.dateTime}}</td>
+                                    <td class="colorgreen">{{i.frequency}}</td>
+                                    <td class="colorgreen">{{i.healthDashboard}}</td>
+                                    <td class="colorgreen">{{i.infoUpdatedBy}}</td>
+                                    <td class="colorgreen">{{i.mountPointUtilization}}</td>
+                                    <td class="colorgreen">{{i.serverIp}}</td>
+                                    <td class="colorgreen">{{i.serviceStatus}}</td>
+                                    <td class="colorgreen">{{i.thresholdMountPoint}}</td>
+                                    <td class="colorgreen">{{i.diskSize}}</td>
+                                    <td class="colorgreen">{{i.usedDiskSpace}}</td>
+                                    <td class="colorgreen">{{i.freeDiskSpace}}</td>
+                                    <td class="colorgreen">{{i.mountedOn}}</td>
+                                </ng-template>
+                            </ng-template>
+                            <!-- <td *ngIf="!ambarg1" style="background-color: yellow ;"class="id">{{i.id}}</td> -->
+                            <!-- <td *ngIf="!green1" style="background-color: green ;"class="id">{{i.id}}</td> -->
+                            <!-- <td>{{i.applicationName}}</td>
+                            <td>{{i.cleanUpMountPoint}}</td>
+                            <td>{{i.dateTime}}</td>
+                            <td>{{i.frequency}}</td>
+                            <td>{{i.healthDashboard}}</td>
+                            <td>{{i.infoUpdatedBy}}</td>
+                            <td>{{i.mountPointUtilization}}</td>
+                            <td>{{i.serverIp}}</td>
+                            <td>{{i.serviceStatus}}</td>
+                            <td>{{i.thresholdMountPoint}}</td>
+                            <td>{{i.diskSize}}</td>
+                            <td>{{i.usedDiskSpace}}</td>
+                            <td>{{i.freeDiskSpace}}</td>
+                            <td>{{i.mountedOn}}</td> -->
+                            <td>
+                                <div class="example-button-container">
+                                    <button [routerLink]="
+                                    ['/app-update-super-admin-portal/ ' + 
+                                    i.id,
+                                    i.applicationName,
+                                    i.cleanUpMountPoint,
+                                    i.dateTime,
+                                    i.frequency,
+                                    i.healthDashboard,
+                                    i.infoUpdatedBy,
+                                    i.mountPointUtilization,
+                                    i.serverIp,
+                                    i.serviceStatus,
+                                    i.thresholdMountPoint,
+                                    i.diskSize,
+                                    i.usedDiskSpace,
+                                    i.freeDiskSpace,
+                                    i.mountedOn
+                                    ]" mat-fab color="accent" aria-label="Example icon button with a delete icon">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="example-button-container">
+                                    <button (click)="deletePortal(i.id)" mat-fab color="accent"
+                                        aria-label="Example icon button with a delete icon">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

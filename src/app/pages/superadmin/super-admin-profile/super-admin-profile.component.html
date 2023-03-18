@@ -1,0 +1,60 @@
+
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1">
+
+        <app-super-admin-sidebar></app-super-admin-sidebar>
+
+      </div>
+      <div class="col-md-11 container">
+
+        <div class="profile">
+
+          <mat-icon color="primary">account_circle</mat-icon>
+          <h3>{{this.login.getUser().firstName}}&nbsp;{{this.login.getUser().lastName}}</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">User Name</th>
+                <th scope="col"></th>
+                <th scope="col">{{this.login.getUser().username}}</th>
+              </tr>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col"></th>
+                <th scope="col">{{this.login.getUser().firstName}}</th>
+              </tr>
+              <tr>
+                <th scope="col">Last Name</th>
+                <th scope="col"></th>
+                <th scope="col">{{this.login.getUser().lastName}}</th>
+              </tr>
+              <tr>
+                <th scope="col">Email</th>
+                <th scope="col"></th>
+                <th scope="col">{{this.login.getUser().email}}</th>
+              </tr>
+              <tr>
+                <th scope="col">Phone No.</th>
+                <th scope="col"></th>
+                <th scope="col">{{this.login.getUser().phone}}</th>
+              </tr>
+              <tr>
+                <th scope="col">Role</th>
+                <th scope="col"></th>
+                <th scope="col">{{this.login.getUserRole()}}</th>
+              </tr>
+
+
+            </thead>
+          </table>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

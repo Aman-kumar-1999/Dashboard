@@ -1,0 +1,150 @@
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row container-fluid">
+            <div class="col-md-0">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-md-1 ">
+                <button (click)="gotoHealth()" mat-menu-item>
+                    <mat-icon color="accent">arrow_back</mat-icon>
+                    <!-- <span style="color rgb(233, 89, 113);"><b>Health</b></span> -->
+                </button>
+            </div>
+
+            <div class="col-md-8 ">
+                <h3>Health Dashboard Infra</h3>
+            </div>
+
+            <div class="col-md-2 container1">
+                <button (click)="insertInfra()" mat-menu-item class="containerb">
+                    <mat-icon color="accent">add_circle</mat-icon>
+                    <!--<label for="show" class="show-btn">Insert</label> -->
+                    <span style="color:rgb(235, 118, 138);">Add Data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </button>
+            </div>
+
+            <div class="col-md-12 container table-responsive">
+
+                <table TABLE BORDER=2 WIDTH="1300" HEIGHT="50">
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th class="id">Id</th>
+                            <th>Application Name</th>
+                            <th>Date Time</th>
+                            <th>Disk Utilization</th>
+                            <th>Frequency</th>
+                            <th>Health Dashboard</th>
+                            <th>Info Updated By</th>
+                            <th>Memory</th>
+                            <th>Server Ip</th>
+                            <th>CUP</th>
+                            <th>Disk Size</th>
+                            <th>Used Disk Space</th>
+                            <th>Free Disk Space</th>
+                            <th>Mounted On</th>
+                            <th>Update</th>
+                            <!-- <th>Delete</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of this.infra.getInfra(); let incexofelement = index; " style="text-align: center;">
+
+
+                            <ng-container
+                                *ngIf="i.diskUtilization>=75 && i.diskUtilization<=100 ; then userloggedIn; else userloggedOut">
+                            </ng-container>
+                            <ng-template #userloggedIn>
+                                <td class="colorred id">{{incexofelement+1}}</td>
+                                <td class="colorred">{{i.applicationName}}</td>
+                                <td class="colorred">{{i.dateTime}}</td>
+                                <td class="colorred">{{i.diskUtilization}}</td>
+                                <td class="colorred">{{i.frequency}}</td>
+                                <td class="colorred">{{i.healthDashboard}}</td>
+                                <td class="colorred">{{i.infoUpdatedBy}}</td>
+                                <td class="colorred">{{i.memory}}</td>
+                                <td class="colorred">{{i.serverIp}}</td>
+                                <td class="colorred">{{i.cpu}}</td>
+                                <td class="colorred">{{i.diskSize}}</td>
+                                <td class="colorred">{{i.usedDiskSpace}}</td>
+                                <td class="colorred">{{i.freeDiskSpace}}</td>
+                                <td class="colorred">{{i.mountedOn}}</td>
+
+                            </ng-template>
+                            <ng-template #userloggedOut>
+                                <ng-container
+                                    *ngIf="i.diskUtilization<75 && i.diskUtilization>=60 ; then ambarg; else green">
+                                </ng-container>
+                                <ng-template #ambarg>
+
+                                    <td class="colorambarg id">{{incexofelement+1}}</td>
+                                    <td class="colorambarg">{{i.applicationName}}</td>
+                                    <td class="colorambarg">{{i.dateTime}}</td>
+                                    <td class="colorambarg">{{i.diskUtilization}}</td>
+                                    <td class="colorambarg">{{i.frequency}}</td>
+                                    <td class="colorambarg">{{i.healthDashboard}}</td>
+                                    <td class="colorambarg">{{i.infoUpdatedBy}}</td>
+                                    <td class="colorambarg">{{i.memory}}</td>
+                                    <td class="colorambarg">{{i.serverIp}}</td>
+                                    <td class="colorambarg">{{i.cpu}}</td>
+                                    <td class="colorambarg">{{i.diskSize}}</td>
+                                    <td class="colorambarg">{{i.usedDiskSpace}}</td>
+                                    <td class="colorambarg">{{i.freeDiskSpace}}</td>
+                                    <td class="colorambarg">{{i.mountedOn}}</td>
+
+                                </ng-template>
+                                <ng-template #green>
+
+                                    <td class="colorgreen">{{incexofelement+1}}</td>
+                                    <td class="colorgreen">{{i.applicationName}}</td>
+                                    <td class="colorgreen">{{i.dateTime}}</td>
+                                    <td class="colorgreen">{{i.diskUtilization}}</td>
+                                    <td class="colorgreen">{{i.frequency}}</td>
+                                    <td class="colorgreen">{{i.healthDashboard}}</td>
+                                    <td class="colorgreen">{{i.infoUpdatedBy}}</td>
+                                    <td class="colorgreen">{{i.memory}}</td>
+                                    <td class="colorgreen">{{i.serverIp}}</td>
+                                    <td class="colorgreen">{{i.cpu}}</td>
+                                    <td class="colorgreen">{{i.diskSize}}</td>
+                                    <td class="colorgreen">{{i.usedDiskSpace}}</td>
+                                    <td class="colorgreen">{{i.freeDiskSpace}}</td>
+                                    <td class="colorgreen">{{i.mountedOn}}</td>
+
+
+                                    
+                                </ng-template>
+                            </ng-template>
+                            <td>
+                                <div class="example-button-container">
+                                    <button [routerLink]="
+                                    ['/app-update-infra/ ' + 
+                                    i.id,
+                                    i.applicationName,                                    
+                                    i.dateTime ,
+                                    i.diskUtilization,
+                                    i.frequency ,
+                                    i.healthDashboard ,
+                                    i.infoUpdatedBy ,
+                                    i.memory ,
+                                    i.serverIp ,
+                                    i.cpu ,                                     
+                                    i.diskSize ,
+                                    i.usedDiskSpace,
+                                    i.freeDiskSpace ,
+                                    i.mountedOn
+                                    ]" mat-fab color="accent" aria-label="Example icon button with a delete icon">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                            <!-- <td>
+                                <button (click)="gotoHealth()" mat-menu-item>
+                                    <mat-icon color="accent">delete</mat-icon>
+                                </button>
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

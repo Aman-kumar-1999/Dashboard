@@ -1,0 +1,95 @@
+<!-- <mat-grid-list cols="1" rowHeight="16:1">
+  <mat-grid-tile class="text-center">
+    <h1>Sign Up Here :)) </h1>
+    
+
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+
+
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 formlogin">
+        <!-- <h1>{{ user | json}}</h1> -->
+        <!-- <h1>{{ role | json }}</h1> -->
+        <div class="text-center">
+          <img src="../../../assets/wipro_logo.png">
+          <!-- <button mat-fab color="warn">
+            <mat-icon>home</mat-icon>
+          </button> -->
+        </div>
+        <h1 class="text-center">Sign Up Here :)) </h1>
+        <div class="container">
+
+
+          <form (ngSubmit)="formSubmit()">
+
+            <div class="form-group">
+              <label for="Username">&nbsp;&nbsp;User Name</label>&nbsp;<span> *</span>
+              <input [(ngModel)]="user.username" name="username" type="text" class="form-control" id="username"
+                placeholder="Enter User Name">
+                <small id="emailHelp" class="form-text text-muted">User name must be Unique</small>
+            </div>
+
+            <div class="form-group">
+              <label for="password">&nbsp;&nbsp;Password</label><span> *</span>
+              <input [(ngModel)]="user.password" name="password" type="password" class="form-control" id="password"
+                placeholder="Password">
+            </div>
+
+            <div class="form-group">
+              <label for="Email">&nbsp;&nbsp;Email address</label>&nbsp; <span> *</span>
+              <input [(ngModel)]="user.email" type="email" name="email" class="form-control" id="email"
+                placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            
+
+            <!-- <div class="form-group">
+              <label for="lastName">&nbsp;&nbsp;User Type</label>
+              <input [(ngModel)]="role.roletype" name="roletype" type="text" class="form-control" id="roletype"
+                placeholder="Enter User Type">
+            </div> -->
+
+            <!-- <select class="form-select">
+            <option selected>User Role</option>
+            <option value="1">1</option>
+            <option value="2">4</option>
+          </select> -->
+
+            <div class="form-group">
+              <!-- <label for="firstName">&nbsp;&nbsp;First Name</label> -->
+              <input [(ngModel)]="user.firstName" name="firstName" type="text" class="form-control" id="firstName"
+                placeholder="Enter First Name">
+            </div>
+
+            <div class="form-group">
+              <!-- <label for="lastName">&nbsp;&nbsp;Last Name</label> -->
+              <input [(ngModel)]="user.lastName" name="lastName" type="text" class="form-control" id="lastName"
+                placeholder="Enter Last Name">
+            </div>
+
+            <div class="form-group">
+              <!-- <label for="mob">&nbsp;&nbsp;Phone/Mobil Number</label> -->
+              <input [(ngModel)]="user.phone" name="phone" type="number" class="form-control" id="mob"
+                placeholder="Enter Phone/Mobil Number">
+            </div>
+
+
+            
+            <div class="text-center">
+              <button style="margin-left: 30px;" mat-flat-button color="primary">Submit</button>
+              <button (click)="cleardata()" style="margin-left: 30px;" mat-flat-button color="accent">Clear</button>
+              <!-- <button Class="btn btn-secondary" type="submit" style="margin-left: 30px;">Clear</button> -->
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

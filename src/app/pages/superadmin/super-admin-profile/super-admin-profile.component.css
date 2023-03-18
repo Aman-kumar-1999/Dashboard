@@ -1,0 +1,20 @@
+.profile{
+    /* margin-left: 500px; */
+    /* margin: 50px 50px 50px 50px; */
+    background-color: rgb(208, 240, 240);
+    text-align: center;
+}
+
+
+/* .mat-icon {
+    font-size: 50px;
+    margin-left: 40px;
+  } */
+
+.mat-icon  {
+    font-size: 200px;
+    height: 200px ;
+    width: 200px ;
+
+    /* margin-left: 500px; */
+}

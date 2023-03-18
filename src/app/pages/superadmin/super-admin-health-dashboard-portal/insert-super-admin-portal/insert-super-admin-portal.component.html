@@ -1,0 +1,167 @@
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row container-fluid">
+            <div class="col-md-0">
+                <app-super-admin-sidebar></app-super-admin-sidebar>
+            </div>
+            <div class="col-md-1 ">
+                <button (click)="gotoPortal()" mat-menu-item>
+                    <mat-icon color="accent">arrow_back</mat-icon>
+                    <!-- <span style="color: rgb(233, 89, 113);"><b>Health</b></span> -->
+                </button>
+            </div>
+
+
+
+
+            <div class="container">
+                <div class="raw">
+                    <div class="col-md-6 offset-md-3 formlogin">
+                        <div>
+                            <h3> Add Your Health Dashboard Portal Data</h3>
+                        </div>
+                        <br>                        
+                        <div class="container">                            
+                            <form (ngSubmit)="formSubmit()">  
+                                                   
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon>Application Name</mat-label>
+                                        <input [(ngModel)]="portaldata.applicationName" name="applicationName" matInput type="text" class="form-control"
+                                            id="applicationName" placeholder="Enter Application Name">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Clean Up Mount Point</mat-label>
+                                        <input [(ngModel)]="portaldata.cleanUpMountPoint"  matInput name="cleanUpMountPoint" type="text" class="form-control"
+                                            id="cleanUpMountPoint" placeholder=" Enter Clean Up Mount Point">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+
+                                    <!-- <mat-form-field appearance="fill">
+                                        <mat-label>Enter Date Time</mat-label>
+                                        <input matInput [matDatepicker]="picker"
+                                               (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"
+                                               [(ngModel)]="portaldata.dateTime" class="form-control"
+                                        id="dateTime" name="dateTime">
+                                        <mat-hint>MM/DD/YYYY</mat-hint>
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                      </mat-form-field> -->
+
+                                    <!-- <mat-form-field appearance="fill">
+                                        <mat-label>Enter Date Time</mat-label>
+                                        <input type="text" matInput [matDatepicker]="dp" [(ngModel)]="portaldata.dateTime" class="form-control"
+                                        id="dateTime" name="dateTime">
+                                        <mat-hint>MMMM DD, YYYY</mat-hint>
+                                        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                                        <mat-datepicker #dp></mat-datepicker>
+                                      </mat-form-field> -->
+                                      
+
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Date Time</mat-label>
+                                        <input [(ngModel)]="portaldata.dateTime"  matInput name="dateTime" type="text" class="form-control"
+                                            id="dateTime" placeholder="Enter Date Time">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Frequency</mat-label>
+                                        <input [(ngModel)]="portaldata.frequency"  matInput name="frequency" type="text" class="form-control"
+                                            id="frequency" placeholder="Enter Frequency">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Health Dashboard</mat-label>
+                                        <input [(ngModel)]="portaldata.healthDashboard"  matInput name="healthDashboard" type="text" class="form-control"
+                                            id="healthDashboard" placeholder="Enter Health Dashboard">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Info Updated By</mat-label>
+                                        <input [(ngModel)]="portaldata.infoUpdatedBy"  matInput name="infoUpdatedBy" type="text" class="form-control"
+                                            id="infoUpdatedBy" placeholder="Enter Info Updated By">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Mount Point Utilization</mat-label>
+                                        <input [(ngModel)]="portaldata.mountPointUtilization"  matInput name="mountPointUtilization" type="text" class="form-control"
+                                            id="mountPointUtilization" placeholder="Enter Mount Point Utilization">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Server Ip</mat-label>
+                                        <input [(ngModel)]="portaldata.serverIp"  matInput name="serverIp" type="text" class="form-control"
+                                            id="serverIp" placeholder="Enter Server Ip">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Service Status</mat-label>
+                                        <input [(ngModel)]="portaldata.serviceStatus"  matInput name="serviceStatus" type="text" class="form-control"
+                                            id="serviceStatus" placeholder=" Enter Service Status">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Threshold Mount Point</mat-label>
+                                        <input [(ngModel)]="portaldata.thresholdMountPoint"  matInput name="thresholdMountPoint" type="text" class="form-control"
+                                            id="thresholdMountPoint" placeholder="Enter Threshold Mount Point">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Disk Size</mat-label>
+                                        <input [(ngModel)]="portaldata.diskSize"  matInput name="diskSize" type="text" class="form-control"
+                                            id="diskSize" placeholder="Enter Disk Size">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Used Disk Space</mat-label>
+                                        <input [(ngModel)]="portaldata.usedDiskSpace"  matInput name="usedDiskSpace" type="text" class="form-control"
+                                            id="usedDiskSpace" placeholder="Enter Used Disk Space">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Free Disk Space</mat-label>
+                                        <input [(ngModel)]="portaldata.freeDiskSpace"  matInput name="freeDiskSpace" type="text" class="form-control"
+                                            id="freeDiskSpace" placeholder="Enter Free Disk Space">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Mounted On</mat-label>
+                                        <input [(ngModel)]="portaldata.mountedOn"  matInput name="mountedOn" type="text" class="form-control"
+                                            id="mountedOn" placeholder="Enter Mounted On">
+                                    </mat-form-field>
+                                </div>
+
+                                
+                                <div class="text-center">
+                                    <button style="margin-left: 30px;" mat-flat-button color="accent">Submit</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>

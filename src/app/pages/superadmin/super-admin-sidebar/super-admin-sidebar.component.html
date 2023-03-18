@@ -1,0 +1,42 @@
+<!-- <app-admin></app-admin> -->
+<!-- <br>
+<br>
+<br>
+<div class="container text-center">
+    <h2>Welcome to Health Dashboard</h2>
+</div> -->
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon color="accent">menu</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+    <button (click)="gotoprofile()" mat-menu-item>
+        <mat-icon color="accent">person</mat-icon>
+        <span style="color: rgb(235, 118, 138);">Profile</span>
+    </button>
+    <!-- <button mat-menu-item>
+        <mat-icon color="accent">home</mat-icon>
+        <span style="color: rgb(235, 118, 138);">Dashboard</span>
+    </button> -->
+    <button (click)="gotoHealth()" mat-menu-item>
+    <!-- <button [routerLink]="'health'" mat-menu-item> -->
+    <mat-icon color="accent">insert_chart</mat-icon>
+    <span style="color: rgb(235, 118, 138);">Health</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon color="accent">web</mat-icon>
+        <span style="color: rgb(235, 118, 138);">UIM</span>
+    </button>
+    <!-- <button mat-menu-item>
+        <mat-icon>web</mat-icon>
+        <span>HealthDashboardInfra</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon>web</mat-icon>
+        <span>HealthDashboardPortal</span>
+    </button>
+
+    <button mat-menu-item>
+        <mat-icon>web</mat-icon>
+        <span>UpComingRenewal</span>
+    </button> -->
+</mat-menu>

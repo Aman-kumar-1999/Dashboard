@@ -1,0 +1,133 @@
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row container-fluid">
+            <div class="col-md-0">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-md-1 ">
+                <button (click)="gotoOem()" mat-menu-item>
+                    <mat-icon color="accent">arrow_back</mat-icon>
+                    <!-- <span style="color: rgb(233, 89, 113);"><b>Health</b></span> -->
+                </button>
+            </div>
+
+
+
+
+            <div class="container">
+                <div class="raw">
+                    <div class="col-md-6 offset-md-3 formlogin">
+                        <div>
+                            <h3> Add Your Health Dashboard Oem Data</h3>
+                        </div>
+                        <br>                        
+                        <div class="container">                            
+                            <form (ngSubmit)="formSubmit()">  
+                                                   
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon>Application Name</mat-label>
+                                        <input [(ngModel)]="oemdata.applicationName" name="applicationName" matInput type="text" class="form-control"
+                                            id="applicationName" placeholder="Enter Application Name">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Application Oem</mat-label>
+                                        <input [(ngModel)]="oemdata.applicationOem"  matInput name="applicationOem" type="text" class="form-control"
+                                            id="applicationOem" placeholder=" Enter Application Oem">
+                                    </mat-form-field>
+                                </div>
+                                
+                               
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Health Dashboard</mat-label>
+                                        <input [(ngModel)]="oemdata.heatlhDasboard"  matInput name="heatlhDasboard" type="text" class="form-control"
+                                            id="heatlhDasboard" placeholder="Enter Health Dashboard">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> L1</mat-label>
+                                        <input [(ngModel)]="oemdata.l1"  matInput name="l1" type="text" class="form-control"
+                                            id="l1" placeholder="Enter L1">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> L2</mat-label>
+                                        <input [(ngModel)]="oemdata.l2"  matInput name="l2" type="text" class="form-control"
+                                            id="l2" placeholder="Enter L2">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Oem SupportStatus</mat-label>
+                                        <input [(ngModel)]="oemdata.oemSupportStatus"  matInput name="oemSupportStatus" type="text" class="form-control"
+                                            id="oemSupportStatus" placeholder="Enter Oem SupportStatus">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Server Ip</mat-label>
+                                        <input [(ngModel)]="oemdata.serverIp"  matInput name="serverIp" type="text" class="form-control"
+                                            id="serverIp" placeholder=" Enter Server Ip">
+                                    </mat-form-field>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Threshold Mount Point</mat-label>
+                                        <input [(ngModel)]="oemdata.thresholdMountPoint"  matInput name="thresholdMountPoint" type="text" class="form-control"
+                                            id="thresholdMountPoint" placeholder="Enter Threshold Mount Point">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Disk Size</mat-label>
+                                        <input [(ngModel)]="oemdata.diskSize"  matInput name="diskSize" type="text" class="form-control"
+                                            id="diskSize" placeholder="Enter Disk Size">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Used Disk Space</mat-label>
+                                        <input [(ngModel)]="oemdata.usedDiskSpace"  matInput name="usedDiskSpace" type="text" class="form-control"
+                                            id="usedDiskSpace" placeholder="Enter Used Disk Space">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Free Disk Space</mat-label>
+                                        <input [(ngModel)]="oemdata.freeDiskSpace"  matInput name="freeDiskSpace" type="text" class="form-control"
+                                            id="freeDiskSpace" placeholder="Enter Free Disk Space">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label><mat-icon>dataset</mat-icon> Mounted On</mat-label>
+                                        <input [(ngModel)]="oemdata.mountedOn"  matInput name="mountedOn" type="text" class="form-control"
+                                            id="mountedOn" placeholder="Enter Mounted On">
+                                    </mat-form-field>
+                                </div> -->
+
+                                
+                                <div class="text-center">
+                                    <button style="margin-left: 30px;" mat-flat-button color="accent">Submit</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row container-fluid">
+            <div class="col-md-0">
+                <app-super-admin-sidebar></app-super-admin-sidebar>
+            </div>
+            <div class="col-md-1 ">
+                <button (click)="gotoHealth()" mat-menu-item>
+                    <mat-icon color="accent">arrow_back</mat-icon>
+                    <!-- <span style="color: rgb(233, 89, 113);"><b>Health</b></span> -->
+                </button>
+            </div>
+  
+            <div class="col-md-8 "> <h3>Health Dashboard App Oem</h3> </div>
+          
+            <div class="col-md-2 container1">
+              <button (click)="insertOem()" mat-menu-item class="containerb">
+                  <mat-icon color="accent">add_circle</mat-icon>
+                  <!--<label for="show" class="show-btn">Insert</label> -->
+                  <span style="color:rgb(235, 118, 138);">Add Data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              </button>
+          </div>
+  
+            <div class="col-md-12 container table-responsive">
+  
+                <table TABLE BORDER=2 WIDTH="1300" HEIGHT="50">
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th class="id">Id</th>
+                            <th>Application Name</th>
+                            <th>Application Oem</th>
+                            <th>Health Dashboard</th>
+                            <th>L1</th>
+                            <th>L2</th>
+                            <th>SoemSupportStatus</th>
+                            <th>Server Ip</th>                  
+                            <th>Update</th>
+                            <th>Delete</th>
+  
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of this.oem.getOem();let incexofelement = index;" style="text-align: center;">
+
+
+                            
+
+                            <td class="id">{{incexofelement+1}}</td>
+                            <td>{{i.applicationName}}</td>
+                            <td>{{i.applicationOem}}</td>
+                            <td>{{i.heatlhDasboard}}</td>
+                            <td>{{i.l1}}</td>
+                            <td>{{i.l2}}</td>
+                            <td>{{i.oemSupportStatus}}</td>
+                            <td>{{i.serverIp}}</td>
+                            <td>
+                              <div class="example-button-container">
+                                  <button [routerLink]="
+                                  ['/app-update-super-admin-oem/ ' + 
+                                  i.id,                            
+                                  i.applicationName,
+                                  i.applicationOem,
+                                  i.heatlhDasboard,
+                                  i.l1,
+                                  i.l2,
+                                  i.oemSupportStatus,
+                                  i.serverIp
+                                  ]" mat-fab color="accent"
+                                      aria-label="Example icon button with a delete icon">
+                                      <mat-icon>edit</mat-icon>
+                                  </button>
+                              </div>
+                            </td>
+                            <td>                                
+                                <div class="example-button-container">
+                                    <button (click)="deleteOem(i.id)" mat-fab color="accent"
+                                        aria-label="Example icon button with a delete icon">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                            <!-- <td>
+                                <button  mat-menu-item>
+                                    <mat-icon color="accent">delete</mat-icon>
+                                </button>
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>

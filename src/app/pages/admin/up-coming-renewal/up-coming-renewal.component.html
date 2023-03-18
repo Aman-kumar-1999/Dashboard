@@ -1,0 +1,68 @@
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row container-fluid">
+            <div class="col-md-0">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-md-1 ">
+                <button (click)="gotoHealth()" mat-menu-item>
+                    <mat-icon color="accent">arrow_back</mat-icon>
+                    <!-- <span style="color: rgb(233, 89, 113);"><b>Health</b></span> -->
+                </button>
+            </div>
+
+            <div class="col-md-8 "> <h3>Health Dashboard UpComing Renewal</h3> </div>
+          
+            <div class="col-md-2 container1">
+                <button (click)="insertRenewal()" mat-menu-item class="containerb">
+                    <mat-icon color="accent">add_circle</mat-icon>
+                    <!--<label for="show" class="show-btn">Insert</label> -->
+                    <span style="color:rgb(235, 118, 138);">Add Data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </button>
+            </div>
+
+            <div class="col-md-12 container table-responsive">
+
+                <table TABLE BORDER=2 WIDTH="1300" HEIGHT="50">
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th class="id">Id</th>
+                            <th>Application Infra</th>                            
+                            <th>Due Date</th>                            
+                            <th>Info Updated By</th>
+                            <th>Owner</th>
+                            <th>Renewal Type</th>                                                       
+                            <th>Update</th>
+                            <!-- <th>Delete</th> -->
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of this.renewal.getRenewal(); let indexofelement = index;" style="text-align: center;">
+                            <td class="id">{{indexofelement+1}}</td>
+                            <td>{{i.applicationInfra}}</td>
+                            <td>{{i.dueDate}}</td>
+                            <td>{{i.infoUpdatedBy}}</td>
+                            <td>{{i.owner}}</td>
+                            <td>{{i.renewalType}}</td>
+                            
+                            <td>
+                                <div class="example-button-container">
+                                    <button [routerLink]="['/app-update-renewal/ ' + i.id,i.applicationInfra,i.dueDate,i.infoUpdatedBy,i.owner,i.renewalType]" mat-fab color="accent"
+                                        aria-label="Example icon button with a delete icon">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                            <!-- <td>
+                                <button (click)="gotoHealth()" mat-menu-item>
+                                    <mat-icon color="accent">delete</mat-icon>
+                                </button>
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

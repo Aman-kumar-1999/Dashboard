@@ -1,0 +1,78 @@
+<div class="wrapper ">
+  <div class="container">
+    <div class="raw">
+      <div class="col-md-6 offset-md-3 formlogin">
+
+        <div class="text-center">
+          
+          
+          
+        </div><br>
+
+        <div class="text-center">
+          <img src="../../../assets/dashboard.png" width="300" height="120">
+          
+        </div>
+       
+        <br>
+        
+        <div class="container">
+
+
+          <!-- (ngSubmit)="formSubmit()" -->
+          <form (ngSubmit)="formSubmit()" >
+            
+            <!-- {{user | json }} -->
+
+
+
+
+            <div class="form-group">
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>
+                  <mat-icon>person</mat-icon> User Name
+                </mat-label>
+
+                <input [(ngModel)]="user.username" required matInput name="username" type="text" class="form-control"
+                  id="username" placeholder="Enter User Name">
+
+              </mat-form-field>
+
+            </div>
+            <div class="form-group">
+              <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>
+                <mat-icon>lock</mat-icon> Password
+              </mat-label>
+              
+              
+              <input  [(ngModel)]="user.password" required matInput name="password" type="password" class="form-control" id="password" placeholder="Password">
+            </mat-form-field>
+            </div>
+
+            <!-- <div class="form-group">
+
+              <mat-icon>lock</mat-icon>
+              <label for="password">&nbsp;&nbsp;Password</label> &nbsp;<span style="color: red;"> *</span>
+              <input [(ngModel)]="user.password" required natInput name="password" type="password" class="form-control"
+                id="password" placeholder="Password">
+            </div><br><br> -->
+            <div class="text-center">
+              <button style="margin-left: 30px;" mat-flat-button color="accent">Submit</button>
+              <!-- <button style="margin-left: 30px;" mat-flat-button color="accent">Clear</button> -->
+              <!-- <button Class="btn btn-secondary" type="submit" style="margin-left: 30px;">Clear</button> -->
+            </div>
+            <div class="text-center"><br>
+              <i style="color: rgb(4, 4, 59)"><b>Powered by Aman</b></i>&nbsp;&nbsp;
+              
+              <!-- <button mat-fab color="warn">
+                <mat-icon>home</mat-icon>
+              </button> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

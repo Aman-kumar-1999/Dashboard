@@ -1,0 +1,29 @@
+/* .bodylogin { 
+    height: 120%; 
+    background-color: rgba(156, 150, 150, 0.322);
+    margin-bottom: 50%;
+    
+    
+} */
+
+
+.profile{
+    /* margin-left: 500px; */
+    /* margin: 50px 50px 50px 50px; */
+    background-color: rgb(208, 240, 240);
+    text-align: center;
+}
+
+
+/* .mat-icon {
+    font-size: 50px;
+    margin-left: 40px;
+  } */
+
+.mat-icon  {
+    font-size: 200px;
+    height: 200px ;
+    width: 200px ;
+
+    /* margin-left: 500px; */
+}

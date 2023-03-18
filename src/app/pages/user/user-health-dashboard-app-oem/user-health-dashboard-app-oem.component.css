@@ -1,0 +1,51 @@
+/* html, body { height: 120%; width: 120%; background-color: rgba(156, 150, 150, 0.322);
+    
+} */
+
+h3{
+    text-align: center;
+    font-family: cursive;
+    color: rgb(22, 14, 29);
+    /* background-color: brown; */
+}
+table{
+    border-collapse: collapse;
+    margin: auto;
+    position:auto;
+    border-radius: solid 4px;
+    /* background-color: rgb(162, 192, 190); */
+}
+thead{
+    background-color: rgb(188, 148, 226);
+}
+tbody{
+    background-color: rgb(243, 243, 191);
+}
+
+
+.margintop{
+    margin-top: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+.margin-left{
+    margin-right:5px;
+}
+.container{
+    display: block;
+    /* float: right; */
+}
+.containerb{
+    display: block;
+    padding-left: 50px;
+    /* float: ; */
+
+    
+}
+th,td{
+    /* border:solid 1px rgb(14, 102, 143); */
+    margin: 50px;
+    padding: 5px;
+}
+.id{
+    padding: 10px;
+}

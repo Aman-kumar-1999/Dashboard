@@ -1,0 +1,26 @@
+
+
+
+.margintop{
+    margin-top: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+.margin-left{
+    margin-right:5px;
+}
+.container{
+    display: block;
+}
+.mat-icon  {
+    font-size: 100px;
+    height: 100px ;
+    width: 100px ;
+
+    /* margin-left: 500px; */
+}
+.btnh{
+    border-radius: 20px;
+    border: none;
+    width: 800px;
+    /* background-color: antiquewhite; */
+}
